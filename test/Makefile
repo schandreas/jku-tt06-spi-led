@@ -5,7 +5,7 @@
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = project.v
+PROJECT_SOURCES = tb_spi.v tb_rgbled.v tt_um_spi.v tt_um_rgbled.v tt_um_rgbled_decoder.v
 
 ifneq ($(GATES),yes)
 
@@ -27,7 +27,7 @@ VERILOG_SOURCES += $(PDK_ROOT)/sky130A/libs.ref/sky130_fd_sc_hd/verilog/primitiv
 VERILOG_SOURCES += $(PDK_ROOT)/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v
 
 # this gets copied in by the GDS action workflow
-VERILOG_SOURCES += $(PWD)/gate_level_netlist.v
+VERILOG_SOURCES += $(PWD)/tt_um_spi.v $(PWD)/tt_um_rgbled.v $(PWD)/tb.v $(PWD)/tb_spi.v $(PWD)/tb_rgbled.v $(PWD)/gate_level_netlist.v
 
 endif
 
